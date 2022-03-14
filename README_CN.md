@@ -166,6 +166,7 @@ wget --no-check-certificate https://raw.githubusercontent.com/jinwyp/one_click_s
 6. 目前网上搭建解锁反代服务器是使用 sniproxy + dns的方式, 本脚本稍后推出 nginx stream + dns, nginx + xray, nginx + v2ray, nginx + sock5, 非常灵活的各种方式搭建解锁反代服务器, 以便达到一台VPS可以同时做网站+提供解锁+v2ray+trojan的目的
 7. Netflix 检测解锁脚本无法测试 使用V2ray路由规则的解锁. 就是说使用本脚本安装过v2ray已经解锁了Netflix, 但用检测解锁脚本检测的结果还是会显示没有解锁, 就是无法测出已解锁Netflix. 可以把检测脚本运行在 V2ray客户端机器上, 则能检测成功解锁. Netflix 检测解锁脚本只能运行在Mac或linux 平台. Windows平台可以使用linux ubuntu 子系统来运行 Netflix 检测解锁脚本.
 
+
 相关文件目录：
  Trojan-go Version: 0.10.6 安装成功 !
     Trojan-go 服务器端配置路径 /root/trojan-go/server.json 
