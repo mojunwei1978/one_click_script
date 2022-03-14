@@ -166,7 +166,38 @@ wget --no-check-certificate https://raw.githubusercontent.com/jinwyp/one_click_s
 6. 目前网上搭建解锁反代服务器是使用 sniproxy + dns的方式, 本脚本稍后推出 nginx stream + dns, nginx + xray, nginx + v2ray, nginx + sock5, 非常灵活的各种方式搭建解锁反代服务器, 以便达到一台VPS可以同时做网站+提供解锁+v2ray+trojan的目的
 7. Netflix 检测解锁脚本无法测试 使用V2ray路由规则的解锁. 就是说使用本脚本安装过v2ray已经解锁了Netflix, 但用检测解锁脚本检测的结果还是会显示没有解锁, 就是无法测出已解锁Netflix. 可以把检测脚本运行在 V2ray客户端机器上, 则能检测成功解锁. Netflix 检测解锁脚本只能运行在Mac或linux 平台. Windows平台可以使用linux ubuntu 子系统来运行 Netflix 检测解锁脚本.
 
+相关文件目录：
+ Trojan-go Version: 0.10.6 安装成功 !
+    Trojan-go 服务器端配置路径 /root/trojan-go/server.json 
+    Trojan-go 运行日志文件路径: /root/trojan-access.log 
+    Trojan-go 查看日志命令: journalctl -n 50 -u trojan-go.service 
+    Trojan-go 停止命令: systemctl stop trojan-go.service  启动命令: systemctl start trojan-go.service  重启命令: systemctl restart trojan-go.service
+    Trojan-go 查看运行状态命令:  systemctl status trojan-go.service 
+    Trojan-go 服务器 每天会自动重启, 防止内存泄漏. 运行 crontab -l 命令 查看定时重启命令 !
 
+
+ Web服务器 nginx 安装成功!!
+    伪装站点为 
+    伪装站点的静态html内容放置在目录 /root/website/html, 可自行更换网站内容!
+    nginx 配置路径 /etc/nginx/nginx.conf 
+    nginx 访问日志 /root/nginx-access.log 
+    nginx 错误日志 /root/nginx-error.log 
+    nginx 查看日志命令: journalctl -n 50 -u nginx.service
+    nginx 启动命令: systemctl start nginx.service  停止命令: systemctl stop nginx.service  重启命令: systemctl restart nginx.service
+    nginx 查看运行状态命令: systemctl status nginx.service 
+	
+	Xray Version: 1.5.3 安装成功 !
+    伪装站点为 
+    伪装站点的静态html内容放置在目录 /root/website/html, 可自行更换网站内容!
+    Xray 服务器端配置路径 /root/v2ray/config.json !
+    Xray 访问日志 /root/v2ray-access.log !
+    Xray 错误日志 /root/v2ray-error.log ! 
+    Xray 查看日志命令: journalctl -n 50 -u xray.service 
+    Xray 停止命令: systemctl stop xray.service  启动命令: systemctl start xray.service 
+    Xray 重启命令: systemctl restart xray.service
+    Xray 查看运行状态命令:  systemctl status xray.service 
+    Xray 服务器 每天会自动重启, 防止内存泄漏. 运行 crontab -l 命令 查看定时重启命令 !
+	
 
 
 ## 注意事项与常见问题 FAQ 
